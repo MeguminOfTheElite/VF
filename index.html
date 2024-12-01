@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+     <!-- Font Awesome -->
+     <link
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+     rel="stylesheet"
+   />
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>VF</title>
+    <style>
+      body {
+        min-height: 100vh;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container-custom {
+        width: 400px;
+        height: 800px;
+        background-color: #e6e6e6;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header,
+      .footer {
+        background-color: #ccc;
+        text-align: center;
+      }
+
+      .header {
+        font-size: 20px;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .menu {
+        flex-grow: 1;
+        overflow-y: auto;
+        scrollbar-width: none; /* For Firefox */
+      }
+
+      .menu-item {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border-top: 1px solid #ccc;
+        background-image: url('./Files/Images/MainButtonBg.png');
+      }
+
+      .menu-item:first-child {
+        border-top: none;
+      }
+
+      .footer {
+        background-color: #ccc;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        position: relative;
+        height: 76px;
+      }
+
+      .footer-button {
+        width: 60px;
+        height: 60px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: #333;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-left: 41%;
+        margin-top: 2.25%;
+      }
+      .video-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.video-card {
+  display: flex;
+  gap: 12px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 68px;
+  flex-shrink: 0;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.video-thumbnail .duration {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.video-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+  color: #333;
+  text-decoration: none;
+}
+
+.video-metadata {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.video-metadata span {
+  margin-right: 8px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div
+      class="container mx-auto my-2 bg-body-secondary"
+      style="height: 640px; width: 360px"
+    >
+    <!-- Header -->
+<div class="container d-flex align-items-center" style="width: 336px; height: 64px; position: relative; background-color: #448e58;">
+  <!-- Hamburger Menu -->
+  <button id="hamburger-menu" class="btn text-white" style="position: absolute; left: 10px;">
+      <i class="fa fa-bars"></i>
+  </button>
+
+  <!-- Logo -->
+  <div class="mx-auto text-white" style="font-size: 18px;">
+      <img src="./Files/Images/Logo no BG_1.png" alt="" style="height: 50px;">
+  </div>
+
+  <!-- Account Button -->
+  <a href="./Files/html/account.html" class="btn text-white" style="position: absolute; right: 10px;">
+      <i class="fa fa-user"></i>
+  </a>
+</div>
+
+<!-- Sidebar -->
+<div id="sidebar" class="bg-light position-absolute top-0 start-0 h-100" 
+   style="width: 300px; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 10; box-shadow: 2px 0 5px rgba(0,0,0,0.1);">
+  <div class="p-3">
+      <h4>Menu</h4>
+      <ul class="list-unstyled">
+          <li><a href="" class="text-dark text-decoration-none">Help With App</a></li>
+          <li><a href="" class="text-dark text-decoration-none">Settings</a></li>
+          <li><a href="" class="text-dark text-decoration-none">FAQs</a></li>
+      </ul>
+  </div>
+</div>
+
+    
+
+      <!-- main_body -->
+      <div class="container row menu" style="width: 360px; height: 500px">
+        <!-- Main content goes here -->
+        <a href="./Files/html/ToDo.html" class="menu-item" style="text-decoration: none; color: black;"><div class="">ToDo</div></a>
+        <a href="./Files/html/calendar.html" class="menu-item" style="text-decoration: none; color: black;"><div class="">Attendance</div></a>
+        <a href="./Files/html/SelfPlanner.html" class="menu-item" style="text-decoration: none; color: black;"><div class="">Self Planner</div></a>
+        <a href="./Files/html/EmergencyHelpline.html" class="menu-item" style="text-decoration: none; color: black;"><div class="">Emergency Helpline</div></a>
+        <a href="./Files/html/CASE_REPORTS.html" class="menu-item" style="text-decoration: none; color: black;"><div class="">Case Reports</div></a>
+        <div class="menu-item">Learning Videos</div>
+        <div class="menu-item" style="background-image: none;"><i class="fa-brands fa-youtube"></i></div>
+
+        <div class="video-section">
+          <div class="video-card">
+            <a href="https://www.youtube.com/shorts/U2n0O940b3Q" class="video-thumbnail">
+              <img src="./Files/Images/vid1.jpg" alt="Video Thumbnail">
+              <div class="duration">1:00</div>
+            </a>
+            <div class="video-info">
+              <h3 class="video-title">Saving a Baby from Trafficking in Malaysia</h3>
+              <p class="video-metadata">
+                <span class="channel-name">International News</span> • <span class="views">9.5K views</span> • <span class="uploaded-time">2 days ago</span>
+              </p>
+            </div>
+          </div>
+          <div class="video-card">
+              <a href="https://www.youtube.com/watch?v=ew7-Z2xCMgE" class="video-thumbnail">
+                <img src="./Files/Images/vid2.jpg" alt="Video Thumbnail">
+                <div class="duration">12:30</div>
+              </a>
+              <div class="video-info">
+                <h3 class="video-title">India’s prostitution villages</h3>
+                <p class="video-metadata">
+                  <span class="channel-name">Documentary</span> • <span class="views">10M views</span> • <span class="uploaded-time">1 year ago</span>
+                </p>
+              </div>
+            </div>
+            <div class="video-card">
+              <a href="https://www.youtube.com/watch?v=3SzazN2OrsQ" class="video-thumbnail">
+                <img src="./Files/Images/vid3.jpg" alt="Video Thumbnail">
+                <div class="duration">1:23</div>
+              </a>
+              <div class="video-info">
+                <h3 class="video-title">Disability and Child Protection</h3>
+                <p class="video-metadata">
+                  <span class="channel-name">UNICEF</span> • <span class="views">519K views</span> • <span class="uploaded-time">12 years ago</span>
+                </p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+      
+      <!-- footer -->
+      <footer class="footer" style="background-color: #448e58;">
+        <div class="container d-flex justify-content-between align-items-center">
+          <!-- Website Button -->
+    <button class="btn text-white" style="font-size: 24px;">
+      <a href="https://www.viplafoundation.org/" style="text-decoration: none; color: white;"><i class="fa fa-globe"></i></a>
+    </button>
+
+      
+          <!-- Call Button -->
+          <button class="footer-button mx-auto my-auto" style="background-color: #f4d116;">
+            <i class="fa fa-phone" style="color: black;"></i>
+          </button>
+      
+          <!-- Camera Button -->
+          <button class="btn text-white" style="font-size: 24px;">
+            <i class="fa fa-camera"></i>
+          </button>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const sidebar = document.getElementById("sidebar");
+
+    hamburgerMenu.addEventListener("click", () => {
+        sidebar.style.transform = sidebar.style.transform === "translateX(0%)" ? "translateX(-100%)" : "translateX(0%)";
+    });
+</script>
+
+
+</html>

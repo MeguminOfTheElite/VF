@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Task Details</title>
+    <style>
+      body {
+        min-height: 100vh;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container-custom {
+        width: 360px;
+        height: 640px;
+        background-color: #e6e6e6;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        background-color: #ccc;
+        font-size: 20px;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer {
+        background-color: #ccc;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 76px;
+      }
+
+      .footer-button {
+        width: 60px;
+        height: 60px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: #333;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .content {
+        flex-grow: 1;
+        padding: 20px;
+        font-size: 18px;
+      }
+
+      h5 {
+        text-align: center;
+      }
+
+      .task-item {
+        border-radius: 15px;
+        background: #d9d9d9;
+        display: flex;
+        width: 100%;
+        gap: 15px;
+        justify-content: space-between;
+        padding: 10px 12px;
+        margin-top: 8px;
+      }
+
+      .task-item:first-of-type {
+        margin-top: 20px;
+      }
+
+      .task-content {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .task-checkbox {
+        aspect-ratio: 1;
+        width: 24px;
+        height: auto;
+      }
+
+      .task-text {
+        margin: 0;
+      }
+
+      .task-menu {
+        aspect-ratio: 1.08;
+        width: 24px;
+        height: auto;
+      }
+
+      .self-tasks-title {
+        font-size: 24px;
+        text-align: center;
+        align-self: center;
+        margin: 25px 0 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div
+      class="container mx-auto my-2 bg-body-secondary"
+      style="height: 640px; width: 360px"
+    >
+      <!-- header -->
+      <div class="container d-flex align-items-center" style="width: 336px; height: 64px; position: relative; background-color: #448e58;">
+        <!-- Hamburger Menu -->
+        <button id="hamburger-menu" class="btn text-white" style="position: absolute; left: 10px;">
+            <i class="fa fa-bars"></i>
+        </button>
+      
+        <!-- Logo -->
+        <div class="mx-auto text-white" style="font-size: 18px;">
+            <img src="../Images/Logo no BG_1.png" alt="" style="height: 50px;">
+        </div>
+      
+        <!-- Account Button -->
+        <a href="./Files/html/account.html" class="btn text-white" style="position: absolute; right: 10px;">
+            <i class="fa fa-user"></i>
+        </a>
+      </div>
+      
+      <!-- Sidebar -->
+      <div id="sidebar" class="bg-light position-absolute top-0 start-0 h-100" 
+         style="width: 300px; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 10; box-shadow: 2px 0 5px rgba(0,0,0,0.1);">
+        <div class="p-3">
+            <h4>Menu</h4>
+            <ul class="list-unstyled">
+                <li><a href="" class="text-dark text-decoration-none">Help With App</a></li>
+                <li><a href="" class="text-dark text-decoration-none">Settings</a></li>
+                <li><a href="" class="text-dark text-decoration-none">FAQs</a></li>
+            </ul>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="container row menu" style="width: 360px; height: 500px">
+        <div class="menu" style="height: 500px;">
+          <div class="container p-0" style="height: 20px;"></div>
+              <!-- Back Button -->
+    <div class="back-button" style="top: 10px; left: 10px;">
+      <button onclick="history.back()" class="btn btn-secondary" style="border-radius: 50%; padding: 8px; width: 40px; height: 40px;">
+          <i class="fa fa-arrow-left"></i>
+      </button>
+    </div>
+            <h5 class="text-center mt-3">Task Detail</h5>
+        <div class="container row">
+          <p class="task-item">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
+            temporibus enim accusantium culpa tenetur fugiat eveniet corporis
+            quisquam sequi dicta consectetur, similique quos veniam aut neque
+            ipsum esse unde nulla.
+          </p>
+        </div>
+      </div>
+
+       <!-- footer -->
+       <footer class="footer" style="background-color: #448e58;">
+        <div class="container d-flex justify-content-between align-items-center">
+          <!-- Website Button -->
+    <button class="btn text-white" style="font-size: 24px;">
+      <a href="https://www.viplafoundation.org/" style="text-decoration: none; color: white;"><i class="fa fa-globe"></i></a>
+    </button>
+
+      
+          <!-- Call Button -->
+          <button class="footer-button mx-auto my-auto" style="background-color: #f4d116;">
+            <i class="fa fa-phone" style="color: black;"></i>
+          </button>
+      
+          <!-- Camera Button -->
+          <button class="btn text-white" style="font-size: 24px;">
+            <i class="fa fa-camera"></i>
+          </button>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+      const hamburgerMenu = document.getElementById("hamburger-menu");
+    const sidebar = document.getElementById("sidebar");
+
+    hamburgerMenu.addEventListener("click", () => {
+        sidebar.style.transform = sidebar.style.transform === "translateX(0%)" ? "translateX(-100%)" : "translateX(0%)";
+    });
+  </script>
+</html>
