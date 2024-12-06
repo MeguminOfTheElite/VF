@@ -178,8 +178,20 @@
   </body>
   <script>  const hamburgerMenu = document.getElementById("hamburger-menu");
     const sidebar = document.getElementById("sidebar");
-
+    
+    // Toggle the sidebar on hamburger menu click
     hamburgerMenu.addEventListener("click", () => {
-        sidebar.style.transform = sidebar.style.transform === "translateX(0%)" ? "translateX(-100%)" : "translateX(0%)";
+        const isSidebarOpen = sidebar.style.transform === "translateX(0%)";
+        sidebar.style.transform = isSidebarOpen ? "translateX(-100%)" : "translateX(0%)";
+    });
+    
+    // Close the sidebar when clicking outside of it
+    document.addEventListener("click", (event) => {
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnHamburger = hamburgerMenu.contains(event.target);
+    
+        if (!isClickInsideSidebar && !isClickOnHamburger) {
+            sidebar.style.transform = "translateX(-100%)";
+        }
     });</script>
 </html>
